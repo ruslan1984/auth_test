@@ -27,6 +27,9 @@
       "@routing/*": [
         "src/routing/*"
       ],
+      "@molecules/*": [
+        "src/molecules/*"
+      ],
     },
     "module": "commonjs",
     "allowJs": true,

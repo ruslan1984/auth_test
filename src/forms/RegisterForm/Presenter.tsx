@@ -1,39 +1,55 @@
-import React, { FC, FormEventHandler } from "react";
-import { Input, Button } from "@atoms/index";
+import React, { FC, FormEvent, FormEventHandler, memo } from "react";
+import { Button } from "@atoms/index";
+import { RichInput } from "@molecules/index";
+import { ErrorText } from "./style";
 
 interface IPresenter {
+  loginErrorMessage?: string;
+  passwordErrorMessage?: string;
+  emailErrorMessage?: string;
+  errorMessage?: string;
+  loading?: boolean;
   onSubmit: FormEventHandler<HTMLFormElement>;
-  onChange: FormEventHandler<HTMLInputElement>;
+  onChange?: FormEventHandler<HTMLInputElement>;
 }
 
-const Presenter: FC<IPresenter> = ({ onChange, onSubmit }: IPresenter) => (
+const Presenter: FC<IPresenter> = ({
+  loginErrorMessage,
+  passwordErrorMessage,
+  emailErrorMessage,
+  errorMessage,
+  loading,
+  onChange,
+  onSubmit,
+}: IPresenter) => (
   <>
     <h1>Регистрация</h1>
     <form action="" onSubmit={onSubmit}>
-      <Input
+      <RichInput
         onChange={onChange}
         name="login"
-        type="login"
+        type="text"
         placeholder="your login"
-        required
+        errorText={loginErrorMessage}
       />
-      <Input
+      <RichInput
         onChange={onChange}
         name="password"
         type="text"
         placeholder="your password"
-        required
+        errorText={passwordErrorMessage}
       />
-      <Input
+      <RichInput
         onChange={onChange}
         name="email"
         type="email"
         placeholder="your email"
-        required
+        errorText={emailErrorMessage}
       />
-      <Button>Отправить</Button>
+      <Button loading={loading ? 1 : 0}>Отправить</Button>
     </form>
+    {errorMessage && <ErrorText>{errorMessage}</ErrorText>}
   </>
 );
 
-export default Presenter;
+export default memo(Presenter);

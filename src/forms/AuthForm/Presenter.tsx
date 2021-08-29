@@ -1,33 +1,42 @@
 import React, { FC, FormEventHandler, memo } from "react";
-import { Input, Button } from "@atoms/index";
+import { Button } from "@atoms/index";
+import { RichInput } from "@molecules/index";
+import { ErrorText } from "./style";
 
 interface IPresenter {
+  okMessage?: string;
+  errorMessage?: string;
+  loading?: boolean;
   onSubmit: FormEventHandler<HTMLFormElement>;
   onChange: FormEventHandler<HTMLInputElement>;
 }
 
-const Presenter: FC<IPresenter> = ({ onSubmit, onChange }: IPresenter) => (
+const Presenter: FC<IPresenter> = ({
+  loading,
+  errorMessage,
+  onSubmit,
+  onChange,
+}: IPresenter) => (
   <>
     <h1>Авторизация</h1>
     <form action="" onSubmit={onSubmit}>
-      <Input
+      <RichInput
         onChange={onChange}
         name="login"
         type="text"
         placeholder="your login"
         required
-        defaultValue=""
       />
-      <Input
+      <RichInput
         onChange={onChange}
         name="password"
         type="password"
         placeholder="your password"
-        defaultValue=""
         required
       />
-      <Button>Отправить</Button>
+      <Button loading={loading ? 1 : 0}>Отправить</Button>
     </form>
+    {errorMessage && <ErrorText>{errorMessage}</ErrorText>}
   </>
 );
 

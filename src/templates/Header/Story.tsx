@@ -8,7 +8,7 @@ export default {
 export const Header = () => {
   return (
     <BrowserRouter>
-      <Presenter />
+      <Presenter currentRoute="/auth" />
     </BrowserRouter>
   );
 };

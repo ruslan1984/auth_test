@@ -7,6 +7,7 @@ export default {
 
 export const Button = () => (
   <div className="container">
-    <Btn>Отправить</Btn>
+    <Btn className="mb-5">Отправить</Btn>
+    <Btn loading={1}>Загрузка</Btn>
   </div>
 );

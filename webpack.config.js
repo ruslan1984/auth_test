@@ -1,6 +1,6 @@
 const path = require("path");
 const webpackRules = require("./webpackRules");
-
+const Dotenv = require("dotenv-webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const PrettierPlugin = require("prettier-webpack-plugin");
 
@@ -19,6 +19,7 @@ module.exports = {
       "@forms": path.resolve(__dirname, "src/forms"),
       "@pages": path.resolve(__dirname, "src/pages"),
       "@routing": path.resolve(__dirname, "src/routing"),
+      "@molecules": path.resolve(__dirname, "src/molecules"),
     },
   },
   output: {
@@ -73,5 +74,6 @@ module.exports = {
       printWidth: 80,
       tabWidth: 2,
     }),
+    new Dotenv(),
   ],
 };
