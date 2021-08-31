@@ -46,7 +46,7 @@ function* register({
     if (!valid) return null;
 
     const response: { status: number } = yield fetch(
-      "http://ec2-18-117-84-227.us-east-2.compute.amazonaws.com:3000/register",
+      `${process.env.REACT_APP_HOST}/register`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json;charset=utf-8" },

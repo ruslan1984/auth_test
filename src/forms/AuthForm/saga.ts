@@ -12,7 +12,7 @@ function* login({ payload: { login, password } }: { payload: LoginDataType }) {
   try {
     yield put(actions.setLoading(true));
     const response: { status: number } = yield fetch(
-      "http://ec2-18-117-84-227.us-east-2.compute.amazonaws.com:3000/login",
+      `${process.env.REACT_APP_HOST}/login`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json;charset=utf-8" },
