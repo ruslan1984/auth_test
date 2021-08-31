@@ -52,15 +52,42 @@ body {
 .flexWrap {
   flex-wrap: wrap;
 }
+
 .fadeIn {
-  animation: fadeIn 2s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
 }
 @keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeInIndex {
+  animation: fadeInIndex 2s ease-in-out;
+}
+@keyframes fadeInIndex {
   from {
     transform: translateX(-50px) Scale(0.2) rotate(90deg);
     opacity: 0;
   }
   to {
     opacity: 1;
+  }
+}
+
+.inputError {
+  animation: inputError 0.15s;
+  animation-iteration-count: 2;
+  border-color: red !important;
+}
+@keyframes inputError {
+  25% {
+    transform: translateX(-10px);
+  }
+  75% {
+    transform: translateX(10px);
   }
 }

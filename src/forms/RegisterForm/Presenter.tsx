@@ -38,7 +38,7 @@ const Presenter: FC<IPresenter> = ({
   onSubmit,
   onFocus,
 }: IPresenter) => (
-  <>
+  <div className="fadeIn">
     <h1>Регистрация</h1>
     <form action="" onSubmit={onSubmit}>
       <RichInput
@@ -76,7 +76,7 @@ const Presenter: FC<IPresenter> = ({
       <Button loading={loading ? 1 : 0}>Отправить</Button>
     </form>
     {errorMessage && <ErrorText>{errorMessage}</ErrorText>}
-  </>
+  </div>
 );
 
 export default memo(Presenter);

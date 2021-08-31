@@ -25,7 +25,7 @@ export const HeaderLink = styled(Link)`
  * Большая ссылка
  */
 export const BigLink = styled(Link)`
-  font-size: 46px;
+  font-size: 26px;
   color: black;
   text-decoration: none;
   padding: 25px 40px;
@@ -33,10 +33,12 @@ export const BigLink = styled(Link)`
   transition: 0.4s;
   border-radius: 75px;
   font-weight: 100;
-
   &:hover {
     background: var(--main-btn-bg-hover);
     transform: scale(1.1);
+  }
+  @media (min-width: 786px) {
+    font-size: 46px;
   }
 `;
 /**
