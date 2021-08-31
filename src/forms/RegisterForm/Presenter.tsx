@@ -42,6 +42,7 @@ const Presenter: FC<IPresenter> = ({
     <h1>Регистрация</h1>
     <form action="" onSubmit={onSubmit}>
       <RichInput
+        label="Логин"
         onChange={onChange}
         onFocus={onFocus}
         name="login"
@@ -50,6 +51,7 @@ const Presenter: FC<IPresenter> = ({
         errorText={loginErrorMessage}
       />
       <RichInput
+        label="Пароль"
         onChange={onChange}
         onFocus={onFocus}
         name="password"
@@ -58,6 +60,7 @@ const Presenter: FC<IPresenter> = ({
         errorText={passwordErrorMessage}
       />
       <RichInput
+        label="Подтверждение пароля"
         onChange={onChange}
         onFocus={onFocus}
         name="confirm_password"
@@ -66,6 +69,7 @@ const Presenter: FC<IPresenter> = ({
         errorText={confirmPasswordErrorMessage}
       />
       <RichInput
+        label="Еmail"
         onChange={onChange}
         onFocus={onFocus}
         name="email"

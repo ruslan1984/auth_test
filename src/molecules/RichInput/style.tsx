@@ -5,6 +5,12 @@ export const RichInput = styled.div`
   padding-bottom: 22px;
 `;
 
+export const Label = styled.div`
+  margin-bottom: 1px;
+  padding-left: 5px;
+  color: gray;
+`;
+
 export const ErrorText = styled.div`
   font-size: 12px;
   color: red;

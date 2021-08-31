@@ -1,6 +1,6 @@
 import React, { FC, memo, InputHTMLAttributes } from "react";
 import { Input } from "@atoms/index";
-import { RichInput, ErrorText } from "./style";
+import { RichInput, ErrorText, Label } from "./style";
 import cn from "classnames";
 
 /**
@@ -9,22 +9,21 @@ import cn from "classnames";
  */
 
 interface IPresenter extends InputHTMLAttributes<HTMLInputElement> {
+  label?: string;
   errorText?: string;
 }
 
 const Presenter: FC<IPresenter> = ({
   errorText,
   value,
+  label,
   ...props
 }: IPresenter) => {
   return (
-    <RichInput>
+    <RichInput className={cn({ inputError: errorText })}>
       <label htmlFor="">
-        <Input
-          className={cn({ inputError: errorText })}
-          value={value}
-          {...props}
-        />
+        {label && <Label>{label}</Label>}
+        <Input value={value} {...props} />
         {errorText && <ErrorText>{errorText}</ErrorText>}
       </label>
     </RichInput>
