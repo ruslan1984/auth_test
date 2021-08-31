@@ -8,6 +8,13 @@ export const defaultState = {
   loading: false,
 };
 
+/**
+ * Форма регистрации. Редьюсер
+ */
+
+/**
+ * Форма регистрации. registerRequest - запрос регистрации
+ */
 export const registerRequest =
   createAction<RegisterDataType>("registerRequest");
 
@@ -15,19 +22,19 @@ export const RegisterSlice = createSlice({
   name: "Register",
   initialState: defaultState,
   reducers: {
-    setErrorMessage: (state, { payload }: { payload: string }) => ({
+    setErrorMessage: (state, { payload }: PayloadAction<string>) => ({
       ...state,
       errorMessage: payload,
     }),
-    setLoginErrorMessage: (state, { payload }: { payload: string }) => ({
+    setLoginErrorMessage: (state, { payload }: PayloadAction<string>) => ({
       ...state,
       loginErrorMessage: payload,
     }),
-    setPasswordErrorMessage: (state, { payload }: { payload: string }) => ({
+    setPasswordErrorMessage: (state, { payload }: PayloadAction<string>) => ({
       ...state,
       passwordErrorMessage: payload,
     }),
-    setEmailErrorMessage: (state, { payload }: { payload: string }) => ({
+    setEmailErrorMessage: (state, { payload }: PayloadAction<string>) => ({
       ...state,
       emailErrorMessage: payload,
     }),

@@ -2,6 +2,12 @@ import { takeEvery, put, call } from "redux-saga/effects";
 import { actions, loginRequest } from "./reducer";
 import { LoginDataType } from "./types";
 
+/**
+ * Форма авторизации. saga
+ * @param {string} login
+ * @param {string} password
+ */
+
 function* login({ payload: { login, password } }: { payload: LoginDataType }) {
   try {
     yield put(actions.setLoading(true));
@@ -24,7 +30,7 @@ function* login({ payload: { login, password } }: { payload: LoginDataType }) {
       yield put(actions.setIsAuth(false));
     }
   } catch (e) {
-    console.error(e.message);
+    yield put(actions.setIsAuth(false));
   } finally {
     yield put(actions.setLoading(false));
   }

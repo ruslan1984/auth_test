@@ -2,6 +2,12 @@ import { takeEvery, put } from "redux-saga/effects";
 import { actions, registerRequest } from "./reducer";
 import { RegisterDataType } from "./types";
 
+/**
+ * Форма регистрации. saga
+ * @param {string} login
+ * @param {string} password
+ */
+
 function* register({
   payload: { login, password, email },
 }: {
@@ -49,8 +55,6 @@ function* register({
     } else {
       yield put(actions.setErrorMessage("Ошибка регистрации"));
     }
-  } catch (e) {
-    console.error(e?.message);
   } finally {
     yield put(actions.setLoading(false));
   }

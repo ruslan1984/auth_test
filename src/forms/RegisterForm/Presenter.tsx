@@ -3,6 +3,17 @@ import { Button } from "@atoms/index";
 import { RichInput } from "@molecules/index";
 import { ErrorText } from "./style";
 
+/**
+ * Форма регистрации. Представление
+ * @param {string} loginErrorMessage
+ * @param {string} passwordErrorMessage
+ * @param {string} emailErrorMessage
+ * @param {string} errorMessage
+ * @param {boolean} loading
+ * @param {FormEventHandler<HTMLFormElement>} onSubmit
+ * @param {FormEventHandler<HTMLInputElement>} onChange
+ */
+
 interface IPresenter {
   loginErrorMessage?: string;
   passwordErrorMessage?: string;

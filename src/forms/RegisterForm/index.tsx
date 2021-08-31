@@ -6,6 +6,10 @@ import { RegisterDataType } from "./types";
 import { reducerType } from "@store/reducers";
 import { actions } from "./reducer";
 
+/**
+ * Форма регистрации
+ */
+
 const RegisterForm: FC = () => {
   const [formData, setFormData] = useState<RegisterDataType>({
     login: "",

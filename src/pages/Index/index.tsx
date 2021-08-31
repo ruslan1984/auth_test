@@ -2,6 +2,11 @@ import React, { FC } from "react";
 import { BigLink } from "@atoms/index";
 import { IndexPage, H1 } from "./styles";
 
+/**
+ * Главная страница
+ * @returns
+ */
+
 const Index: FC = () => (
   <IndexPage>
     <H1>Добро пожаловать</H1>

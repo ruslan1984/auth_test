@@ -1,5 +1,8 @@
 import styled from "@emotion/styled";
 
+/**
+ * Поле ввода
+ */
 export const Input = styled.input`
   font-size: 16px;
   color: black;

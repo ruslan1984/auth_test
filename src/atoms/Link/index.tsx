@@ -1,6 +1,9 @@
 import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
+/**
+ * Ссылка
+ */
 export const HeaderLink = styled(Link)`
   font-weight: 100;
   letter-spacing: 0.4px;
@@ -18,6 +21,9 @@ export const HeaderLink = styled(Link)`
   }
 `;
 
+/**
+ * Большая ссылка
+ */
 export const BigLink = styled(Link)`
   font-size: 46px;
   color: black;

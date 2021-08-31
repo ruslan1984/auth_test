@@ -7,12 +7,7 @@ import { reducerType } from "@store/reducers";
 
 /**
  * Форма авторизации
- *
- * @author Ruslan
- * @version	1.0.0
- * @returns
  */
-
 const AuthForm: FC = () => {
   const [formData, setFormData] = useState<LoginDataType>({
     login: "",

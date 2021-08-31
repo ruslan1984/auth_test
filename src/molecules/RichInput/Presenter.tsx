@@ -2,6 +2,11 @@ import React, { FC, memo, InputHTMLAttributes } from "react";
 import { Input } from "@atoms/index";
 import { RichInput, ErrorText } from "./style";
 
+/**
+ * RichInput. Представление
+ * @param {string} errorText - текст при ошибке
+ */
+
 interface IPresenter extends InputHTMLAttributes<HTMLInputElement> {
   errorText?: string;
 }

@@ -3,6 +3,15 @@ import { Button } from "@atoms/index";
 import { RichInput } from "@molecules/index";
 import { ErrorText } from "./style";
 
+/**
+ * Форма авторизации. Представление
+ * @param {string} okMessage
+ * @param {string} errorMessage
+ * @param {boolean} loading
+ * @param {FormEventHandler<HTMLFormElement>} onSubmit
+ * @param {FormEventHandler<HTMLInputElement>} onChange
+ */
+
 interface IPresenter {
   okMessage?: string;
   errorMessage?: string;

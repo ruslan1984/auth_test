@@ -1,3 +1,6 @@
+/**
+ * Форма авторизации. Редьюсер
+ */
 import { createSlice, PayloadAction, createAction } from "@reduxjs/toolkit";
 import { LoginDataType } from "./types";
 export const defaultState = {
@@ -7,26 +10,29 @@ export const defaultState = {
   loading: false,
 };
 
+/**
+ * Форма авторизации. loginRequest - запрос авторизации
+ */
 export const loginRequest = createAction<LoginDataType>("loginRequest");
 
 export const AuthSlice = createSlice({
   name: "Auth",
   initialState: defaultState,
   reducers: {
-    setIsAuth: (state, { payload }: { payload: boolean }) => ({
+    setIsAuth: (state, { payload }: PayloadAction<boolean>) => ({
       ...state,
       isAuth: payload,
     }),
-    setOkMessage: (state, { payload }: { payload: string }) => ({
+    setOkMessage: (state, { payload }: PayloadAction<string>) => ({
       ...state,
       okMessage: payload,
     }),
-    setErrorMessage: (state, { payload }: { payload: string }) => ({
+    setErrorMessage: (state, { payload }: PayloadAction<string>) => ({
       ...state,
       errorMessage: payload,
     }),
     clearErrorMessage: (state) => ({ ...state, errorMessage: "" }),
-    setLoading: (state, { payload }: { payload: boolean }) => ({
+    setLoading: (state, { payload }: PayloadAction<boolean>) => ({
       ...state,
       loading: payload,
     }),

@@ -5,7 +5,9 @@ const DefaultStyle = `background: var(--main-btn-bg);
   &:hover {
     background: var(--main-btn-bg-hover);
 }`;
-
+/**
+ * Кнопка
+ */
 export const Button = styled.button`
   cursor: pointer;
   border-radius: 26px;
