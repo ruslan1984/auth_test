@@ -14,12 +14,14 @@ const RegisterForm: FC = () => {
   const [formData, setFormData] = useState<RegisterDataType>({
     login: "",
     password: "",
+    confirm_password: "",
     email: "",
   });
   const dispatch = useDispatch();
   const {
     loginErrorMessage,
     passwordErrorMessage,
+    confirmPasswordErrorMessage,
     emailErrorMessage,
     errorMessage,
     loading,
@@ -35,20 +37,22 @@ const RegisterForm: FC = () => {
     (e: FormEvent<HTMLInputElement>) => {
       const { name, value } = e.target as HTMLInputElement;
       setFormData({ ...formData, [name]: value });
-      dispatch(actions.clearErrorMessage());
     },
     [formData]
   );
+  const onFocus = useCallback(() => dispatch(actions.clearErrorMessage()), []);
 
   return (
     <Presenter
       loginErrorMessage={loginErrorMessage}
       passwordErrorMessage={passwordErrorMessage}
+      confirmPasswordErrorMessage={confirmPasswordErrorMessage}
       emailErrorMessage={emailErrorMessage}
       errorMessage={errorMessage}
       loading={loading}
       onChange={onChange}
       onSubmit={onSubmit}
+      onFocus={onFocus}
     />
   );
 };

@@ -4,6 +4,7 @@ export const defaultState = {
   errorMessage: "",
   loginErrorMessage: "",
   passwordErrorMessage: "",
+  confirmPasswordErrorMessage: "",
   emailErrorMessage: "",
   loading: false,
 };
@@ -34,6 +35,13 @@ export const RegisterSlice = createSlice({
       ...state,
       passwordErrorMessage: payload,
     }),
+    setConfirmPasswordErrorMessage: (
+      state,
+      { payload }: PayloadAction<string>
+    ) => ({
+      ...state,
+      confirmPasswordErrorMessage: payload,
+    }),
     setEmailErrorMessage: (state, { payload }: PayloadAction<string>) => ({
       ...state,
       emailErrorMessage: payload,
@@ -42,6 +50,7 @@ export const RegisterSlice = createSlice({
       ...state,
       loginErrorMessage: "",
       passwordErrorMessage: "",
+      confirmPasswordErrorMessage: "",
       emailErrorMessage: "",
       errorMessage: "",
     }),
