@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 
 /**
- * Ссылка
+ * Ссылка в Header
  */
 export const HeaderLink = styled(Link)`
   font-weight: 100;
@@ -33,11 +33,15 @@ export const BigLink = styled(Link)`
   transition: 0.4s;
   border-radius: 75px;
   font-weight: 100;
+
   &:hover {
     background: var(--main-btn-bg-hover);
     transform: scale(1.1);
   }
 `;
+/**
+ *  Cсылка
+ */
 export const SmallLink = styled(Link)`
   text-decoration: none;
   color: black;

@@ -52,3 +52,15 @@ body {
 .flexWrap {
   flex-wrap: wrap;
 }
+.fadeIn {
+  animation: fadeIn 2s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    transform: translateX(-50px) Scale(0.2) rotate(90deg);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
